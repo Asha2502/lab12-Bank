@@ -15,7 +15,7 @@ class UserOperationTest {
     void usersWithPositiveBalance() {
         List<User> users = new ArrayList<>();
         users.add(new User(1, "Мария", Arrays.asList(new BankAccount(1, -1000), new BankAccount(5, 7000))));
-        users.add(new User(2, "Матвей",  List.of(new BankAccount(2, 2000), new BankAccount(3, 1000))));
+        users.add(new User(2, "Алексей",  List.of(new BankAccount(2, 2000), new BankAccount(3, 1000))));
         Assertions.assertIterableEquals( users, UserOperation.usersWithPositiveBalance(users));
     }
 
@@ -24,7 +24,7 @@ class UserOperationTest {
         List<User> users = new ArrayList<>();
         users.add(new User(1, "Мария", Arrays.asList(new BankAccount(1, -1000), new BankAccount(5, 7000))));
         users.add(new User(2, "Матвей",  List.of(new BankAccount(2, 2000), new BankAccount(3, 1000))));
-        users.add(new User(2, "Матвей",  List.of(new BankAccount(2, 2000), new BankAccount(3, 1000))));
+        users.add(new User(2, "Алексей",  List.of(new BankAccount(2, 2000), new BankAccount(3, 1000))));
         Assertions.assertIterableEquals( users, UserOperation.usersTop3(users));
     }
 
@@ -33,7 +33,7 @@ class UserOperationTest {
         List<User> users = new ArrayList<>();
         users.add(new User(1, "Мария", Arrays.asList(new BankAccount(1, -1000), new BankAccount(5, -7000))));
         users.add(new User(2, "Матвей",  List.of(new BankAccount(2, -2000), new BankAccount(3, -1000))));
-        users.add(new User(2, "Матвей",  List.of(new BankAccount(2, -2000), new BankAccount(3, -1000))));
+        users.add(new User(2, "Алексей",  List.of(new BankAccount(2, -2000), new BankAccount(3, -1000))));
         Assertions.assertIterableEquals( users, UserOperation.usersWithNegativeBalance(users));
     }
 }
